@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hospedagem Online - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Restaurante Online - Área Administrativa</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-success">
+            <div>
+                <form id="form-login" name="form-login" method="get" action="javascript:function()">
+                    <p>
+                        <label for="txtLogin">Login</label>&nbsp;
+                        <input type="text" id="txtLogin" name="txtLogin" />
+                    </p>
+                    <p>
+                        <label for="txtSenha">Senha</label>&nbsp;
+                        <input type="password" id="txtSenha" name="txtSenha" />&nbsp;
+                    </p>
+                    <p><a id="botao-entrar" class="btn btn-success"> Entrar </a></p>
+                </form><br />
+                <label id="status" class="alert alert-warning"></label>
+            </div>
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Autenticacao.js")"></script>
+</body>
+</html>

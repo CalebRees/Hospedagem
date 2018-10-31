@@ -1,0 +1,17 @@
+﻿@model Hospedagem.Models.TipoQuarto
+
+@{
+    ViewBag.Title = "Details";
+}
+<h4>@Model.Descricao</h4>
+
+
+<h4>Tipo de Quarto</h4>
+<hr />
+<ul>
+    <li>
+        Descrição: <b>@Model.Descricao</b>
+    </li>
+</ul>
+<hr />
+@Html.ActionLink("Voltar", "Index")

@@ -1,0 +1,39 @@
+﻿@model Hospedagem.Models.Estabelecimento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<h4>@Model.Nome</h4>
+<h4>Estabelecimentos</h4>
+<hr />
+<ul>
+    <li>@Html.DisplayNameFor(model => model.Nome)</li>
+
+    <li>@Html.DisplayFor(model => model.Nome)</li>
+
+   <li> @Html.DisplayNameFor(model => model.Endereco)</li>
+
+   <li>@Html.DisplayFor(model => model.Endereco)</li>
+
+   <li> @Html.DisplayNameFor(model => model.Telefone)</li>
+
+   <li>@Html.DisplayFor(model => model.Telefone)</li>
+
+   <li> @Html.DisplayNameFor(model => model.Site)</li>
+
+   <li> @Html.DisplayFor(model => model.Site)</li>
+
+   <li> @Html.DisplayNameFor(model => model.Categoria.Descricao)</li>
+
+   <li>@Html.DisplayFor(model => model.Categoria.Descricao)</li>
+
+
+   <li>@Html.DisplayFor(model => model.Cidade.Nome)</li>
+
+</ul>
+
+@Html.ActionLink("Voltar", "Index")
+

@@ -1,0 +1,19 @@
+﻿@model Hospedagem.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+<h4>@Model.Nome</h4>
+<hr />
+
+<ul>
+    <li>@Html.DisplayNameFor(model => model.Nome)</li>
+    <li>@Html.DisplayFor(model => model.Nome)</li>
+    <li>@Html.DisplayNameFor(model => model.Login)</li>
+    <li>@Html.DisplayFor(model => model.Login)</li>
+    <li>@Html.DisplayNameFor(model => model.Senha)</li>
+    <li>@Html.DisplayFor(model => model.Senha)</li>
+</ul>
+    @Html.ActionLink("Back to List", "Index")

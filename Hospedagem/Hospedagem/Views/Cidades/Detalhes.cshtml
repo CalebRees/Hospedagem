@@ -1,0 +1,19 @@
+﻿@model Hospedagem.Models.Cidade
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+    <h4> @Model.Nome</h4>
+    <h4> Cidades</h4>
+    <hr />
+    <ul>
+        <li>@Html.DisplayNameFor(model => model.Nome)</li>
+        <li>@Html.DisplayFor(model => model.Nome)</li>
+        <li>@Html.DisplayNameFor(model => model.UF)</li>
+    </ul>
+    <hr />
+    @Html.ActionLink("Voltar", "Index")
+

@@ -1,0 +1,18 @@
+﻿@model Hospedagem.Models.Categoria
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h4>@Model.Descricao</h4>
+
+
+<h4>Categoria</h4>
+<hr />
+<ul>
+    <li>
+        Descrição: <b>@Model.Descricao</b>
+    </li>
+</ul>
+<hr />
+@Html.ActionLink("Voltar","Index")

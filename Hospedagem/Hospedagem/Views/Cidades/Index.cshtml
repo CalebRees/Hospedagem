@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Hospedagem.Models.Cidade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>  Cidades</h4>
+@Html.ActionLink("Adicionar", "Inserir")
+<table class="table">
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.IDCidade)</td>
+        <td>@Html.DisplayNameFor(model => model.Nome)</td>
+        <td>@Html.DisplayNameFor(model => model.UF)</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDCidade</td>
+            <td>@item.Nome</td>
+            <td>@item.UF</td>
+            <td>
+                @Html.ActionLink("Alterar", "Alterar", new { id = item.IDCidade }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.IDCidade })
+            </td>
+        </tr>
+    }
+</table>

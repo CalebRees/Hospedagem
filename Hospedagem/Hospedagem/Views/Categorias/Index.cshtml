@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Hospedagem.Models.Categoria>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>  Categorias  </h4>
+@Html.ActionLink("Adicionar", "Inserir")
+<br />
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IDCategoria)</th>
+        <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDCategoria</td>
+            <td>@item.Descricao</td>
+            <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id = item.IDCategoria }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.IDCategoria })
+            </td>
+        </tr>
+    }
+</table>

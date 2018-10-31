@@ -1,0 +1,20 @@
+﻿@model Hospedagem.Models.Quarto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<h4>@Model.NumeroQuarto</h4>
+<hr />
+<ul>
+    <li>@Html.DisplayNameFor(model => model.Disponivel)</li>
+    <li>@Html.DisplayFor(model => model.Disponivel)</li>
+    <li>@Html.DisplayNameFor(model => model.Estabelecimento.Nome)</li>
+    <li>@Html.DisplayFor(model => model.Estabelecimento.Nome)</li>
+    <li>@Html.DisplayNameFor(model => model.TipoQuarto.Descricao)</li>
+    <li>@Html.DisplayFor(model => model.TipoQuarto.Descricao)</li>
+</ul>
+
+@Html.ActionLink("Back to List", "Index")

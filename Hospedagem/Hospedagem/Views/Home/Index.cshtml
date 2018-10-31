@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+@Html.ExibeImagens()
+
+<h3>Encontre sua hospedagem aqui!</h3>
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Cidade</label>
+            @Html.DropDownList("Cidade")
+        </div>
+        <div class="form-group">
+            <label>Categoria</label>
+            @Html.DropDownList("Categoria")
+        </div>
+        <button type="button" id="pesquisar" class="btn btn-success">Pesquisar</button>
+        <br /><br />
+    </form>
+</div>
+<div class="row">
+    <div id="resultados"></div>
+</div>
+@section Scripts{
+    <script>
+        $(function () {
+            $("#pesquisar").on("click", function () {
+                var pesquisa = { IDCidade: $("#Cidade").val(), IDCategoria: $("#Categoria").val() };
+                $.getJSON("/home/pesquisar", pesquisa, function (data) {
+                    var resultados = $("#resultados");
+                    resultados.empty();
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning">Não encontramos nenhuma hospedagem...</div>');
+                        return false;
+                    }
+                    for (var i = 0; i < data.length; i++) {
+                        resultados.append('<div class="alert alert-success"' +
+                            '<h4><b>' + data[i].Nome + '</b></h4>' +
+                            '<p><b>Endereço: </b>' + data[i].Endereco + '</p>' +
+                            '<p><b>Telefone: </b>' + data[i].Telefone + '</p>' +
+                            '<p><b>Site: </b>' + data[i].Site + '</p>' +
+                            '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+}
